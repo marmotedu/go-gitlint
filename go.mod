@@ -1,4 +1,4 @@
-module github.com/llorllale/go-gitlint
+module github.com/marmotedu/go-gitlint
 go 1.13
 
 require (
@@ -12,5 +12,3 @@ require (
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 	gopkg.in/src-d/go-git.v4 v4.10.0
 )
-
-replace github.com/marmotedu/go-gitlint => ./

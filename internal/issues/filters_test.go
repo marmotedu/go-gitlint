@@ -20,8 +20,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/llorllale/go-gitlint/internal/commits"
-	"github.com/llorllale/go-gitlint/internal/issues"
+	"github.com/marmotedu/go-gitlint/internal/commits"
+	"github.com/marmotedu/go-gitlint/internal/issues"
 )
 
 func TestOfSubjectRegexMatch(t *testing.T) {

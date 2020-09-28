@@ -19,7 +19,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/llorllale/go-gitlint/internal/commits"
+	"github.com/marmotedu/go-gitlint/internal/commits"
 )
 
 // Filter identifies an issue with a commit.
