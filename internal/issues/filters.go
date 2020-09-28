@@ -17,6 +17,7 @@ package issues
 import (
 	"fmt"
 	"regexp"
+	"strings"
 
 	"github.com/llorllale/go-gitlint/internal/commits"
 )
@@ -39,6 +40,32 @@ func OfSubjectRegex(regex string) Filter {
 		if !matched {
 			issue = Issue{
 				Desc:   fmt.Sprintf("subject does not match regex [%s]", regex),
+				Commit: *c,
+			}
+		}
+
+		return issue
+	}
+}
+
+// OfBlankLine tests if commit message have a blank line between subject and body.
+func OfBlankLine() Filter {
+	return func(c *commits.Commit) Issue {
+		var issue Issue
+
+		lines := strings.Split(c.Message, "\n")
+		newLines := make([]string, 0)
+		for _, line := range lines {
+			if strings.HasPrefix(line, "#") {
+				continue
+			}
+
+			newLines = append(newLines, line)
+		}
+
+		if len(newLines) > 1 && len(strings.Fields(newLines[1])) != 0 {
+			issue = Issue{
+				Desc:   "no blank line between subject and body",
 				Commit: *c,
 			}
 		}

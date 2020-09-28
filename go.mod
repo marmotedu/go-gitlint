@@ -1,4 +1,5 @@
 module github.com/llorllale/go-gitlint
+go 1.13
 
 require (
 	github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc // indirect
@@ -12,4 +13,4 @@ require (
 	gopkg.in/src-d/go-git.v4 v4.10.0
 )
 
-go 1.13
+replace github.com/marmotedu/go-gitlint => ./

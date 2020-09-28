@@ -55,6 +55,7 @@ func main() {
 						issues.OfSubjectRegex(*subjectRegex),
 						issues.OfSubjectMaxLength(*subjectMaxLength),
 						issues.OfSubjectMinLength(*subjectMinLength),
+						issues.OfBlankLine(),
 						issues.OfBodyRegex(*bodyRegex),
 						issues.OfBodyMaxLength(*bodyMaxLength),
 					},
